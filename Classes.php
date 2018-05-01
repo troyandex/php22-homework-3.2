@@ -10,7 +10,7 @@ abstract class SuperClass
     }
 }
 
-abstract class Product extends SuperClass
+abstract class Product extends SuperClass implements ProductInterface
 {
     protected $title;
     protected $price;
@@ -29,7 +29,7 @@ abstract class Product extends SuperClass
     }
 }
 
-abstract class Animal extends SuperClass
+abstract class Animal extends SuperClass implements AnimalInterface
 {
     protected $breed; // порода
     protected $dwellingPlace; // место обитания
@@ -46,7 +46,7 @@ abstract class Animal extends SuperClass
 }
 
 // Машина
-class Car extends Product
+class Car extends Product implements CarInterface
 {
     public $power = 150;
     public $type = 'Car';

@@ -8,7 +8,6 @@ interface ProductInterface
 interface CarInterface
 {
     public function setCarPower();
-    public function setOilVolume($volume);
 }
 
 interface AnimalInterface
