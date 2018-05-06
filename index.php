@@ -2,7 +2,7 @@
 
 // Классы и интерфейсы в отдельных файлах
 require_once 'classes.php';
-require_once 'interfaces.php';
+
 
 // машины -------------------------------------------
 $carAudi = new Car('Audi R8', 1000);
@@ -10,6 +10,7 @@ $carBMV = new Car('BMV X5', 2000);
 
 $carAudi->setMark();
 $carAudi->setCarPower(2000);
+$carAudi->setEngineSize(2.0);
 // $carAudi->getPrint();
 
 // TV -----------------------------------------------
@@ -18,6 +19,7 @@ $tvSony = new TV('Sony FULL HD', 17000);
 
 $tvLG->setMark();
 $tvLG->setTVResolution('20*20');
+$tvLG->setColor('white');
 // $tvLG->getPrint();
 
 // Ручки --------------------------------------------
@@ -25,13 +27,16 @@ $penParker = new BallpointPen('Parker Jotter', 2500);
 $penPero = new BallpointPen('Pero Caran', 1500);
 
 $penParker->setMark();
-$penParker->setPenColor('green');
+$penParker->setColor('green');
+$penParker->setDesign('rotary');
 // $penParker->getPrint();
 
 // Утки ---------------------------------------------
 $duckPekin = new Duck ('Пекинская утка', 'Китай');
 $duckRussia = new Duck ('Русская утка', 'Россия');
 
+$duckRussia->setColor('green');
+$duckRussia->setWild('No');
 // $duckPekin->makeSound();
 // $duckPekin->getPrint();
 
@@ -39,6 +44,8 @@ $duckRussia = new Duck ('Русская утка', 'Россия');
 $milkCow = new Cow ('Молочная корова', 'Сарай');
 $meatCow = new Cow ('Мясная корова', 'Британия');
 
+$meatCow->setColor('black');
+$meatCow->setWild('No');
 // $meatCow->makeSound();
 // $meatCow->getPrint();
 ?>

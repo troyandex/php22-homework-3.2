@@ -1,4 +1,5 @@
 <?php
+require_once 'interfaces.php';
 
 abstract class SuperClass
 {
@@ -49,16 +50,21 @@ abstract class Animal extends SuperClass implements AnimalInterface
 class Car extends Product implements CarInterface
 {
     public $power = 150;
+    public $engineSize = 1.6;
     public $type = 'Car';
 
     public function setCarPower($hp)
     {
         $this->power = $hp;
     }
+    public function setEngineSize($es)
+    {
+        $this->engineSize = $es;
+    }
 }
 
 // Телевизор
-class TV extends Product
+class TV extends Product implements TVInterface
 {
     public $resolution = '10*10';
     public $color = 'black';
@@ -67,29 +73,60 @@ class TV extends Product
     {
         $this->resolution = $resolution;
     }
-}
-
-// Шариковая ручка
-class BallpointPen extends Product
-{
-    public $color;
-
-    public function setPenColor($color)
+    public function setColor($color)
     {
         $this->color = $color;
     }
 }
 
+// Шариковая ручка
+class BallpointPen extends Product implements BallpointPenInterface
+{
+    public $color;
+    public $design = 'pressure';
+
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+    public function setDesign($design)
+    {
+        $this->design = $design;
+    }
+}
+
 // Утка
-class Duck extends Animal
+class Duck extends Animal implements DuckInterface
 {
     protected $type = 'Duck';
     protected $sound = 'Кря';
+    public $color;
+    public $wild = 'yes';
+
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+    public function setWild($wild)
+    {
+        $this->wild = $wild;
+    }
 }
 
 // Корова
-class Cow extends Animal
+class Cow extends Animal implements CowInterface
 {
     protected $type = 'Cow';
     protected $sound = 'Муу';
+    public $color;
+    public $wild;
+
+    public function setColor($color)
+    {
+        $this->color = $color;
+    }
+    public function setWild($wild)
+    {
+        $this->wild = $wild;
+    }
 }
